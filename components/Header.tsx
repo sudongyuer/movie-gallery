@@ -11,7 +11,7 @@ import Image from "next/image";
 import HeaderItem from './HeaderItem';
 function Header() {
   return (
-    <header className="flex flex-col">
+    <header className="flex flex-col sm:flex-row  m-5 justify-between items-center">
       <div className="flex items-center justify-evenly  max-w-2xl flex-grow">
       <HeaderItem title={'HOME'} Icon={HomeIcon} />
       <HeaderItem title="TRENDING" Icon={LightningBoltIcon} />
@@ -25,7 +25,6 @@ function Header() {
         height={100}
         className="object-contain"
       />
-
     </header>
   )
 }
