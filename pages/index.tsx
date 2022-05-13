@@ -8,25 +8,9 @@ import Nav from '../components/Nav'
 import Results from '../components/Results'
 import requests from '../utils/requests'
 const Home: NextPage = () => {
-
-  // async function fetchData() {
-  //   const request = await fetch(
-  //     `https://api.themoviedb.org/3${
-  //     requests.fetchTrending.url
-  //     }`
-  //   ).then((res) => res.json());
-
-  //   return request
-  // }
-
-  // fetchData().then((data)=>{
-  //   console.log(data)
-  // })
-
   const router = useRouter()
   const { genre } = router.query
   const [results, setResults] = useState(null)
-  console.log(genre,results)
   useEffect(() => {
     async function fetchResults() {
       const {results} = await fetch(
@@ -54,7 +38,7 @@ const Home: NextPage = () => {
       {/* Nav */}
       <Nav />
       {/* Results */}
-      <Results />
+      <Results  results={results} />
     </div>
   )
 }
