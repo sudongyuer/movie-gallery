@@ -1,8 +1,47 @@
 import type { NextPage } from 'next'
+import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import Header from '../components/Header'
+import Nav from '../components/Nav'
+import Results from '../components/Results'
+import requests from '../utils/requests'
 const Home: NextPage = () => {
+
+  // async function fetchData() {
+  //   const request = await fetch(
+  //     `https://api.themoviedb.org/3${
+  //     requests.fetchTrending.url
+  //     }`
+  //   ).then((res) => res.json());
+
+  //   return request
+  // }
+
+  // fetchData().then((data)=>{
+  //   console.log(data)
+  // })
+
+  const router = useRouter()
+  const { genre } = router.query
+  const [results, setResults] = useState(null)
+  console.log(genre,results)
+  useEffect(() => {
+    async function fetchResults() {
+      const {results} = await fetch(
+        `https://api.themoviedb.org/3${
+          requests[genre]?.url || requests.fetchTrending.url
+        }`
+      ).then((res) => res.json());
+      setResults(results)
+    }
+    fetchResults()
+
+  }, [genre])
+
+
+
   return (
     <div>
       <Head>
@@ -11,11 +50,30 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Header */}
-      <Header/>
+      <Header />
       {/* Nav */}
+      <Nav />
       {/* Results */}
+      <Results />
     </div>
   )
 }
 
 export default Home
+
+
+// export async function getServerSideProps(context) {
+//   const genre = context.query.genre;
+
+//   const request = await fetch(
+//     `https://api.themoviedb.org/3${
+//       requests[genre]?.url || requests.fetchTrending.url
+//     }`
+//   ).then((res) => res.json());
+
+//   return {
+//     props: {
+//       results: request.results,
+//     },
+//   };
+// }
