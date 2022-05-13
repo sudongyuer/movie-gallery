@@ -1,5 +1,5 @@
 // Typically we would store in {process.env.API_KEY}
-const API_KEY = 'ce134f48fbe38d5a8d3133ec8cc19eb2'
+const API_KEY = process.env.API_KEY
 console.log(API_KEY);
 export default {
   fetchTrending: {
