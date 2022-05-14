@@ -1,35 +1,25 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState } from 'react'
 import Image from 'next/image'
 import { ThumbUpIcon } from '@heroicons/react/outline';
-type result = {
-  "adult": boolean,
-  "backdrop_path": string,
-  "genre_ids":number[],
-  "id": number,
-  "original_language": string,
-  "original_title": string,
-  "overview":string,
-  "popularity": number,
-  "poster_path":string,
-  "release_date":string,
-  "title": string,
-  "video": boolean,
-  "vote_average": number,
-  "vote_count": number
-}
+import MovieModal from './MovieModal';
+
 const BASE_URL = "https://image.tmdb.org/t/p/original/";
 
 // eslint-disable-next-line react/display-name
 const Thumbnail=forwardRef<HTMLDivElement>(({ result }:any, ref) => {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
+  const [modalIsOpen, setModalIsOpen] = useState(false)
   return (
+    <>
     <div 
     ref={ref}
-    className="group cursor-pointer p-2 transition duration-100 ease-in-out
-    transform sm:hover:scale-105 hover:z-50
+    onClick={()=>{setModalIsOpen(true)}}
+    className="group cursor-pointer p-2 transition duration-300 ease-in-out
+    transform sm:hover:scale-105 hover:z-1
    ">
      <Image 
      layout='responsive'
+     className='rounded-3xl'
      src={
        `${BASE_URL}${result.backdrop_path || result.poster_path}`
        ||
@@ -54,6 +44,14 @@ const Thumbnail=forwardRef<HTMLDivElement>(({ result }:any, ref) => {
        </p>
      </div>
    </div>
+      {/* Modal */}
+      <MovieModal 
+        result={result}
+        isOpen={modalIsOpen}
+        portalClassName="modal"
+        setModalIsOpen={setModalIsOpen}
+      />
+   </>
   );
 });
 export default Thumbnail
