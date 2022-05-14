@@ -1,0 +1,54 @@
+.modal {
+  .ReactModal__Overlay.ReactModal__Overlay--after-open {
+    background: $bgOverlay !important;
+  }
+
+  .ReactModal__Content.ReactModal__Content--after-open {
+    max-width: $popupWidth;
+    height: $popupHeight;
+    background: $bgContent !important;
+    margin: auto;
+    border: none !important;
+    border-radius: $fingerSize !important;
+    outline: none;
+    font-family: $fontText;
+    overflow-y: scroll;
+    padding: $fingerSize $fingerSize + 10px !important;
+    text-align: justify;
+    transition: color 0.2s ease;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    h3 {
+      color: $colorPopupText;
+      font-weight: $fontWeight + 100;
+      font-size: $fontSize + 21px;
+      text-align: center;
+      letter-spacing: 1px;
+      line-height: $fingerSize + 30px;
+    }
+    .viewer-count {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: $fingerSize - 5px;
+      p {
+        font-size: $fontSize + 1px;
+        letter-spacing: 1px;
+        margin: $fingerSize - 5px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+
+    span {
+      color: $colorModalText;
+      font-weight: $fontWeight;
+      font-style: normal;
+      padding-top: $fingerSize - 7px;
+    }
+  }
+}
