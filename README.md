@@ -12,7 +12,9 @@
 - Pnpm
 - CssGrid
 - Responsive
-
+- react-flip-move
+- react-modal
+- Sass
 ## 请我喝咖啡☕️
 如果觉得这个项目能够帮助到您，请给我个star🌟，或者推荐给您的朋友,我会继续努力的,您也可以加我`VX:sudongyuer` 和我交流
 持续更新中 ～ 🚀🚀🚀
