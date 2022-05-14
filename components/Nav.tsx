@@ -18,7 +18,7 @@ function Nav() {
         }}
         className="last:pr-24 cursor-pointer transform transition : ;
         duration-100 hover:scale-125 hover:text-white
-        active:text-red-500
+        active:text-red-500 animate-transform-in
         ">
           {title}
         </h2>
