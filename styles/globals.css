@@ -7,9 +7,4 @@
     @apply bg-[#06202A] text-gray-300
   }
 }
-html{
-  touch-action: auto;
-}
-*{
-  touch-action: auto;
-}
+
