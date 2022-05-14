@@ -1,0 +1,34 @@
+/* Most used Font type, size, weight*/
+
+$fontSize: 14px;
+$fontWeight: 400;
+$globalFont: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Ubuntu, "Helvetica Neue", sans-serif;
+$fontText: "Baloo Tamma 2", cursive;
+
+/* Width, Height, Padding, Margin sizes */
+
+$originalWidth: 100%;
+$headerWidth: 60px;
+$cardWidth: 400px;
+$popupWidth: 500px;
+$cardHeight: 230px;
+$popupHeight: 300px;
+$navHeight: 70px;
+$fingerSize: 10px;
+
+/* Background colors */
+$bgPrimary: linear-gradient(315deg, #032923 0%, #072025 30%, #05111b 100%);
+$bgOverlay: rgba(0, 0, 0, 0.85);
+$bgContent: rgba(58, 67, 77, 0.82);
+
+/* Font colors */
+$colorOriginal: #6add60;
+$colorSvg: #1ce783;
+$colorPrimary: #aca3a3;
+$colorSecondary: #ebd9d9;
+$colorModalText: #c0d6df;
+$colorHoverText: #e9e6e6;
+$colorWhite: #ffffff;
+$colorFooterText: #7f8788;
+$colorPopupText: #e7eeeb;
