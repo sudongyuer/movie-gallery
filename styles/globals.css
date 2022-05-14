@@ -8,3 +8,6 @@
   }
 }
 
+div{
+  -webkit-overflow-scrolling: touch;
+}
