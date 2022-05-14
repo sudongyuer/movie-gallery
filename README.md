@@ -1,9 +1,13 @@
 # movie-gallery
 > A simple movie gallery （just for study）
 
+`PC`
+
 ![](https://tva1.sinaimg.cn/large/e6c9d24egy1h289y3kvwfj21p50u07gc.jpg)
 
-![](https://tva1.sinaimg.cn/large/e6c9d24egy1h289z9u73fj20ss1eiwmv.jpg)
+`Mobile`
+
+![](https://tva1.sinaimg.cn/large/e6c9d24egy1h28db9om9rj20h4110diw.jpg)
 ## 技术栈
 
 - TypeScript
