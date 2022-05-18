@@ -6,15 +6,14 @@ import MovieModal from './MovieModal';
 const BASE_URL = "https://image.tmdb.org/t/p/original/";
 
 // eslint-disable-next-line react/display-name
-const Thumbnail = forwardRef<HTMLDivElement>(({ result }: any, ref) => {
+const Thumbnail = forwardRef<HTMLDivElement>(({ result ,setModalIsOpen,setCurrentResult}: any, ref) => {
   const [showSkeleton, setShowSkeleton] = useState(true);
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
-  const [modalIsOpen, setModalIsOpen] = useState(false)
   return (
     <>
       <div
+        onClick={() => { setCurrentResult(result) ;setModalIsOpen(true); }}
         ref={ref}
-        onClick={() => { setModalIsOpen(true) }}
         className="group cursor-pointer p-2 transition duration-300 ease-in-out
     transform sm:hover:scale-105 hover:z-1 relative
    ">
@@ -54,13 +53,6 @@ const Thumbnail = forwardRef<HTMLDivElement>(({ result }: any, ref) => {
           </p>
         </div>
       </div>
-      {/* Modal */}
-      <MovieModal
-        result={result}
-        isOpen={modalIsOpen}
-        portalClassName="modal"
-        setModalIsOpen={setModalIsOpen}
-      />
     </>
   );
 });
