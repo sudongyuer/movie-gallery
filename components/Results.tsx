@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Thumbnail from './Thumbnail';
 import FlipMove from 'react-flip-move';
 import { resultsArray } from '../types';
+import MovieModal from './MovieModal';
 
 function Results({results}:{results:resultsArray}) {
   console.log(results);
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const [currentResult, setCurrentResult] = useState(null)
   return (
+    <>
     <FlipMove
     enterAnimation="accordionVertical"
     leaveAnimation="fade"
@@ -16,9 +20,21 @@ function Results({results}:{results:resultsArray}) {
     "
     >
       {results?.map(result=>(
-        <Thumbnail key={result.id} result={result}/>
+        <Thumbnail key={result.id} setModalIsOpen={setModalIsOpen} result={result} setCurrentResult={setCurrentResult}/>
       ))}
     </FlipMove>
+      {/* Modal */}
+      {
+        currentResult ?
+        (
+        <MovieModal
+        result={currentResult}
+        isOpen={modalIsOpen}
+        portalClassName="modal"
+        setModalIsOpen={setModalIsOpen}
+      />):null
+      }
+      </>
   )
 }
 
